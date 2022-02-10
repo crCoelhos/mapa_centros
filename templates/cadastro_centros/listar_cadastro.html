@@ -8,7 +8,7 @@
         
         {% load crispy_forms_tags %}
 
-        {%block conteudo %}
+        {% block conteudo %}
             <h1 class="h3 mb-4 text-gray-800">Listagem de centros</h1>
 
             <hr>
@@ -25,9 +25,7 @@
                         <tr>
                             <td scope="row">{{ item.nome_centro}}</td>
                             <td>{{item.sigla}}</td>
-                            <td>{{item.latitude}},{{item.longitude}}</td>
-                            <td><a href="{% url 'update' item.pk %}"><button type="button" class="btn btn-warning btn-lg" width="50px" height="50px">Editar</button></a>
-                            <a href="{% url 'deletar' item.pk %}"><i class="fa fa-trash btn-lg btn-danger" aria-hidden="true"></i></a><br></td>
+                            <td>{{item.latitude}},{{item.longitude}}</td>                            
                         </tr>
 
                         {% empty %}
