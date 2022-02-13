@@ -17,15 +17,15 @@
                         <tr>
                             <th>Centro</th>
                             <th>Sigla</th>
-                            <th>Cordenadas</th>
+                            <th>Coordenadas</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for item in object_list %}
                         <tr>
                             <td scope="row">{{ item.nome_centro}}</td>
-                            <td>{{item.sigla}}</td>
-                            <td>{{item.latitude}},{{item.longitude}}</td>                            
+                            <td>{{item.sigla_centro}}</td>
+                            <td>{{item.latitude}}, {{item.longitude}}</td>                            
                         </tr>
 
                         {% empty %}

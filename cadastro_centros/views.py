@@ -10,8 +10,8 @@ def abertura_modelform(request):
 
 
 class CentrosCad(CreateView):
-    models = Centros
-    fields = ['nome_centro','sigla', 'latitude','longitude']
+    model = Centros
+    fields = ['nome_centro','sigla_centro', 'latitude','longitude']
     template_name = 'cadastro_centros/index_cadastro.html'
     success_url = reverse_lazy('listagem')
     
