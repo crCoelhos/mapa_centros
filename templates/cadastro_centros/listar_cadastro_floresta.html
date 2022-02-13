@@ -9,7 +9,7 @@
         {% load crispy_forms_tags %}
 
         {% block conteudo %}
-            <h1 class="h3 mb-4 text-gray-800">Listagem de centros do Campus Rio Branco</h1>
+            <h1 class="h3 mb-4 text-gray-800">Listagem de centros do Campus Floresta</h1>
 
             <hr>
                 <hr>
@@ -23,9 +23,9 @@
                     <tbody>
                         {% for item in object_list %}
                         <tr>
-                            <td scope="row">{{ item.nome_centro}}</td>
-                            <td>{{item.sigla_centro}}</td>
-                            <td>{{item.latitude}}, {{item.longitude}}</td>                            
+                            <td scope="row">{{ item.nome_centro_fl}}</td>
+                            <td>{{item.sigla_centro_fl}}</td>
+                            <td>{{item.latitude_fl}}, {{item.longitude_fl}}</td>                            
                         </tr>
 
                         {% empty %}
