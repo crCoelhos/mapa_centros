@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from cadastro_centros import views
 from cadastro_centros.views import CentrosCad, CentrosListagem
 
