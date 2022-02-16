@@ -81,9 +81,11 @@
                         </li>
             
                         <!-- Divider -->
+                        
+                        <!-- Nav Item - Pages Collapse Menu -->
+            {% if user.is_authenticated %}
+                        
                         <hr class="sidebar-divider">
-
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -98,6 +100,8 @@
                     </div>
                 </div>
             </li>
+
+            {% endif %}
 
             <!-- Heading -->
             
@@ -152,12 +156,12 @@
                             </a>
                             
                                                 
-
+                            {% if user.is_authenticated %}
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
                                 <img class="img-profile rounded-circle"
                                     src={% static "img/undraw_profile.svg" %}>
                             </a>
@@ -175,6 +179,17 @@
                                 </a>
                             </div>
                         </li>
+
+
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Cadastro</a>
+                        </li>
+                        {% endif %}
+
 
                     </ul>
 
@@ -221,15 +236,20 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Pronto para sair?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Tem certeza que deseja encerrar a sessão? Clique em "sair" para confirmar.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <form method="post" action="/accounts/logout/">
+                        {% csrf_token %}
+                        <input type="hidden" name="csrfmiddlewaretoken" value="kHM4Ff5ZofgBEl3N82u3bYviqUMNotiln9axfJrLvEa7Fj8sY5uZ3dHl00j4VeBA">
+                        
+                        <button type="submit" class="btn btn-primary">Sair</button>
+                      </form>
                 </div>
             </div>
         </div>
