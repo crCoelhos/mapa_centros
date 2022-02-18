@@ -11,5 +11,4 @@ urlpatterns = [
     
     #local
     path('', include('cadastro_centros.urls')),
-    path('', include('pages.urls', namespace='pages')),
 ]

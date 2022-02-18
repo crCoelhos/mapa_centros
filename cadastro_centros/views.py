@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
+from django.views.decorators.csrf import csrf_exempt
 from .models import Centros_Rio_Branco, Centros_Floresta
+
 from django.urls import reverse_lazy
 
 

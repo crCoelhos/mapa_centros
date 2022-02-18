@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     #local
-    'pages.apps.PagesConfig'
     
 ]
 
@@ -127,6 +126,8 @@ os.path.join(BASE_DIR, 'static')
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
+LOGIN_REDIRECT_URL  = '/'
+LOGOUT_REDIRECT_URL  = '/accounts/login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -139,5 +140,6 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_LOGOUT_ON_GET = True
 SITE_ID = 1

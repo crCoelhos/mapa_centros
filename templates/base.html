@@ -161,7 +161,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{user}}</span>
                                 <img class="img-profile rounded-circle"
                                     src={% static "img/undraw_profile.svg" %}>
                             </a>
@@ -173,8 +173,7 @@
                                     Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                <a class="dropdown-item" href="/accounts/logout/" >
                                     Logout
                                 </a>
                             </div>
@@ -200,7 +199,6 @@
 
                     {% block conteudo %}
 
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
                    
                     {% endblock %}
 
@@ -230,30 +228,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Pronto para sair?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Tem certeza que deseja encerrar a sessão? Clique em "sair" para confirmar.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <form method="post" action="/accounts/logout/">
-                        {% csrf_token %}
-                        <input type="hidden" name="csrfmiddlewaretoken" value="kHM4Ff5ZofgBEl3N82u3bYviqUMNotiln9axfJrLvEa7Fj8sY5uZ3dHl00j4VeBA">
-                        
-                        <button type="submit" class="btn btn-primary">Sair</button>
-                      </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Bootstrap core JavaScript-->
     <script src={% static "vendor/jquery/jquery.min.js" %}></script>
