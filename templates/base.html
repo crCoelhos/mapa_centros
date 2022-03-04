@@ -27,6 +27,14 @@
     <link href={% static "css/sb-admin-2.min.css" %} rel="stylesheet">
     <link rel="stylesheet" href={% static "css/style.css" %}>
 
+    <style>
+        #map{
+            width: 500px;
+            height: 500px;
+            background: #ddd;
+        }
+    </style>
+
 </head>
 
 <body id="page-top">
@@ -219,7 +227,7 @@
 
 
 
-                    {% comment %} tentativa 4 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
+                    {% comment %} tentativa 5 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
                     <div class="container">
 
 
@@ -231,13 +239,9 @@
 
                                 </div>
                             </div>
-                            <div class="col">
-                                <div id="block-wrp">
-                                    <div class="block-item">
-                                        <div id="mapCanvas5" class="map-item"> </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <div id="map"></div>
+                            
                         </div>
                     </div>      
                 </div>
@@ -279,10 +283,22 @@
     <script src={% static "js/sb-admin-2.min.js" %}></script>
 
     <!--mapa-->
-    <script async defer src="https://maps.google.com/maps/api/js?key=AIzaSyDpCgk6Q5eeqE_wtOel2MaCnE3nG89FywA&callback=drawMap"></script>
+    <script async defer src="https://maps.google.com/maps/api/js?key=AIzaSyDVBD066JdV2IEMzIb4Dtgi54ktxVz4cec&callback=initMap"></script>
     <script src="controlers.js"></script>
 
     <script src={% static "js/maps.js" %}></script>
+    
+
+    <!-- script base mapa -->
+    <script type="text/javascript">
+        var map;
+        function initMap(){
+            map = new google.maps.Map(documents.getElementById('map'),{
+                center: {lat: 0, lng: 0},
+                zoom: 8,
+            });
+        }
+    </script>
 
 </body>
 
