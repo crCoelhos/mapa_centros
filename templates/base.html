@@ -27,13 +27,7 @@
     <link href={% static "css/sb-admin-2.min.css" %} rel="stylesheet">
     <link rel="stylesheet" href={% static "css/style.css" %}>
 
-    <style>
-        #map{
-            width: 500px;
-            height: 500px;
-            background: #ddd;
-        }
-    </style>
+    
 
 </head>
 
@@ -227,21 +221,10 @@
 
 
 
-                    {% comment %} tentativa 5 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
-                    <div class="container">
-
-
-                        <div class="row">
-                            <div class="col colcentros">
-                                <div class="link-centros">
-                                    <a class="link-centros" href="http://www2.ufac.br/cela" target="_self" title="">CELA - Centro de Ciências Educação, Letras e Artes
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <div id="map"></div>
-                            
+                    {% comment %} tentativa 6 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
+                    <div class="container" id="mapa">                        
+                        <div class="row">                            
+                            <div id="map"></div>                            
                         </div>
                     </div>      
                 </div>
@@ -282,23 +265,15 @@
     <!-- Custom scripts for all pages-->
     <script src={% static "js/sb-admin-2.min.js" %}></script>
 
-    <!--mapa-->
-    <script async defer src="https://maps.google.com/maps/api/js?key=AIzaSyDVBD066JdV2IEMzIb4Dtgi54ktxVz4cec&callback=initMap"></script>
-    <script src="controlers.js"></script>
-
-    <script src={% static "js/maps.js" %}></script>
+    
+    
+    
+    <!-- script base mapa -->
     
 
-    <!-- script base mapa -->
-    <script type="text/javascript">
-        var map;
-        function initMap(){
-            map = new google.maps.Map(documents.getElementById('map'),{
-                center: {lat: 0, lng: 0},
-                zoom: 8,
-            });
-        }
-    </script>
+    <script src= {% static "js/mapa.js" %} ></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXFNTaQYzWOQ1KB5RZGRCpxMmF2KLUAtM&callback=initMap" >
+    </script>  
 
 </body>
 

@@ -30,3 +30,16 @@
     height: 10%;
     line-height: 2em;
 }
+
+
+#map{
+    
+    width: 500px;
+    height: 500px;
+    background: #ddd;
+}
+
+.mapa{
+    margin-top: 15px;
+    margin-left: 45px;
+}
