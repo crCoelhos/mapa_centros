@@ -17,7 +17,8 @@
                         <tr>
                             <th>Centro</th>
                             <th>Sigla</th>
-                            <th>Coordenadas</th>
+                            <th>latitude</th>
+                            <th>longitude</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -25,7 +26,8 @@
                         <tr>
                             <td scope="row">{{ item.nome_centro}}</td>
                             <td>{{item.sigla_centro}}</td>
-                            <td>{{item.latitude}}, {{item.longitude}}</td>                            
+                            <td id="latitude">{{item.latitude}}</td>
+                            <td id="longitude">{{item.longitude}}</td>                            
                         </tr>
 
                         {% empty %}
