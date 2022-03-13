@@ -26,7 +26,29 @@
     <!-- Custom styles for this template-->
     <link href={% static "css/sb-admin-2.min.css" %} rel="stylesheet">
     <link rel="stylesheet" href={% static "css/style.css" %}>
-
+    <style type="text/css">
+        .directions li span.arrow {
+          display:inline-block;
+          min-width:28px;
+          min-height:28px;
+          background-position:0px;
+          background-image: url("https://heremaps.github.io/maps-api-for-javascript-examples/map-with-route-from-a-to-b/img/arrows.png");
+          position:relative;
+          top:8px;
+        }
+        .directions li span.depart  {
+          background-position:-28px;
+        }
+        .directions li span.rightturn  {
+          background-position:-224px;
+        }
+        .directions li span.leftturn{
+          background-position:-252px;
+        }
+        .directions li span.arrive  {
+          background-position:-1288px;
+        }
+        </style>
     
 
 </head>
@@ -222,59 +244,59 @@
 
 
                     {% comment %} tentativa 6 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
-                    <div class="container" id="mapa">                        
+                     <div class="container" id="mapa">                        
                         <div class="row">                            
                             <div id="map"></div>                            
                         </div>
-                    </div>      
-                </div>
-
-             </div>
-           
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; C Coelho 2022</span>
                     </div>
+
+                    
                 </div>
-            </footer>
-            <!-- End of Footer -->
+           
+                
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; C Coelho 2022</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+                
+            </div>
+            <!-- End of Content Wrapper -->
 
         </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
     <!-- End of Page Wrapper -->
-
+    
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
     
-
+    
+    
     <!-- Bootstrap core JavaScript-->
     <script src={% static "vendor/jquery/jquery.min.js" %}></script>
     <script src={% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}></script>
-
+    
     <!-- Core plugin JavaScript-->
     <script src={% static "vendor/jquery-easing/jquery.easing.min.js" %}></script>
 
     <!-- Custom scripts for all pages-->
     <script src={% static "js/sb-admin-2.min.js" %}></script>
-
+    
     
     
     
     <!-- script base mapa -->
     
-
+    
     <script src= {% static "js/mapa.js" %} ></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXFNTaQYzWOQ1KB5RZGRCpxMmF2KLUAtM&callback=initMap" >
     </script>  
-
+    
 </body>
 
 </html>
