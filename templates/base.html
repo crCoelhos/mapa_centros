@@ -25,31 +25,9 @@
 
     <!-- Custom styles for this template-->
     <link href={% static "css/sb-admin-2.min.css" %} rel="stylesheet">
-    <link rel="stylesheet" href={% static "css/style.css" %}>
-    <style type="text/css">
-        .directions li span.arrow {
-          display:inline-block;
-          min-width:28px;
-          min-height:28px;
-          background-position:0px;
-          background-image: url("https://heremaps.github.io/maps-api-for-javascript-examples/map-with-route-from-a-to-b/img/arrows.png");
-          position:relative;
-          top:8px;
-        }
-        .directions li span.depart  {
-          background-position:-28px;
-        }
-        .directions li span.rightturn  {
-          background-position:-224px;
-        }
-        .directions li span.leftturn{
-          background-position:-252px;
-        }
-        .directions li span.arrive  {
-          background-position:-1288px;
-        }
-        </style>
     
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <link rel="stylesheet" href={% static "css/mapa.css" %}>
 
 </head>
 
@@ -243,12 +221,36 @@
 
 
 
-                    {% comment %} tentativa 6 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
-                     <div class="container" id="mapa">                        
-                        <div class="row">                            
-                            <div id="map"></div>                            
+                    {% comment %} tentativa 7 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
+                    <div id="floating-panel">
+                             
+                        {% comment %} <div>
+                            <div>
+                                <input type="text" id="from" placeholder="origem">
+                            </div>
+                        </div> {% endcomment %}
+            
+                        <div>
+                            <div>
+                                <input type="text" id="to" placeholder="destino">
+                            </div>
                         </div>
+                
+                        <select id="mode">
+                            <option value="DRIVING">Dirigindo</option>
+                            <option value="TRANSIT">Transporte publico</option>
+                            <option value="WALKING">Andando</option>
+                        </select>
+                
                     </div>
+                        
+                    <div id="map"></div>
+            
+                </div>
+                    
+                <div id="map"></div>
+
+                
 
                     
                 </div>
@@ -293,9 +295,8 @@
     <!-- script base mapa -->
     
     
-    <script src= {% static "js/mapa.js" %} ></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXFNTaQYzWOQ1KB5RZGRCpxMmF2KLUAtM&callback=initMap" >
-    </script>  
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANpJfil1IUPqq9CFOA58wB5Jl0rhrWFps&callback=initMap"></script>
+    <script src= {% static "js/index.js" %} ></script>
     
 </body>
 
