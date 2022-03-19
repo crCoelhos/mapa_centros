@@ -30,3 +30,9 @@ function calcularRota(directionsService, directionsRenderer){
     .catch((e) => window.alert("essa requisição falhou."));
 
 }
+
+
+window.destino = function(){
+    const destination = document.getElementById("coordenadas");
+    console.log(destination)
+}
