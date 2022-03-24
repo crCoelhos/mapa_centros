@@ -32,7 +32,12 @@ function calcularRota(directionsService, directionsRenderer){
 }
 
 
-window.destino = function(){
-    const destination = document.getElementById("coordenadas");
-    console.log(destination)
+
+const entrada_rota = document.getElementById("GFG_DOWN"); //eldown
+const saida_rota = document.getElementById("to"); 
+
+function rodar_direcao() {
+    saida_rota.value = document.getElementById("coordenadas").value; 
+  
+    console.log(saida_rota)
 }

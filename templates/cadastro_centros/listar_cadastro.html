@@ -25,7 +25,7 @@
                         <tr>
                             <td scope="row">{{ item.nome_centro}}</td>
                             <td>{{item.sigla_centro}}</td>
-                            <td type="button" id="coordenadas" onclick="destino();"> {{item.latitude}}, {{item.longitude}}</td>                            
+                            <td type="button" id="coordenadas" onclick="rodar_direcao()"> {{item.latitude}}, {{item.longitude}}</td>                            
                         </tr>
 
                         {% empty %}
@@ -34,20 +34,14 @@
                     </tbody>
                     
                 </table>
-                    {% comment %} tentativa 7 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
+                    {% comment %} tentativa 9 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
 
-                <div id="floating-panel">
-                             
-                    {% comment %} <div>
-                        <div>
-                            <input type="text" id="from" placeholder="origem">
-                        </div>
-                    </div> {% endcomment %}
-        
+                <div id="rotas">
+                         
                                            
                         <div>
                             <div>
-                                <input type="text" id="to" placeholder="destino">
+                                <input type="text" id="to" placeholder="destino" value="">
                                 
                                 <select id="mode">
                                     <option value="DRIVING">Dirigindo</option>

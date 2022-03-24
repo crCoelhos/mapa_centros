@@ -2,18 +2,4 @@
     height: 500px;
     width: 500px;
 }
-html,
-body{
-  height: 100%;
-  margin: 0; 
-  padding: 0;
-}
 
-#floating-panel{
-  top: 10px;
-  left: 25%;
-  z-index: 5;
- 
-  line-height: 30px;
-  padding-left: 10px;
-}
