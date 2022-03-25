@@ -1,3 +1,4 @@
+//inicializador do canvas pra desenhar o mapa
 function initMap(){
     const directionsRenderer = new google.maps.DirectionsRenderer();
     const directionsService = new google.maps.DirectionsService();
@@ -13,13 +14,13 @@ function initMap(){
     });
     
 }
-
+//traçar a rota
 function calcularRota(directionsService, directionsRenderer){
     const selectedMode = document.getElementById("mode").value;
     
     directionsService
     .route({
-        origin: { lat: -9.953317514546832, lng:-67.86271998458022 },
+        origin: { lat: -9.953317514546832, lng:-67.86271998458022 }, //Lat, Lon do ponto inicial
         destination: document.getElementById("to").value,
 
         travelMode: google.maps.TravelMode[selectedMode],
@@ -27,16 +28,16 @@ function calcularRota(directionsService, directionsRenderer){
     .then((response) => {
         directionsRenderer.setDirections(response);
     })
-    .catch((e) => window.alert("essa requisição falhou."));
+
+    //exceção
+    .catch((e) => window.alert("clique no botão do centro e selecione o modo de direção.")); 
 
 }
 
 
-
-    const saida_rota = document.getElementById("to"); 
+//função para jogar as coordenadas geradas no box de input de direção
+const saida_rota = document.getElementById("to"); 
 
 function rodar_direcao() {
-    saida_rota.value = document.getElementById("destino2").value; 
-  
-    console.log(saida_rota)
+    saida_rota.value = document.getElementById("destino{{item.id}}").value; 
 }

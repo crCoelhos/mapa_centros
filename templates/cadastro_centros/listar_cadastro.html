@@ -25,7 +25,7 @@
                         <tr>
                             <td scope="row">{{ item.nome_centro}}</td>
                             <td>{{item.sigla_centro}}</td>
-                            <td type="button" id="destino{{item.id}}" onclick="rodar_direcao()" value="{{item.latitude}}, {{item.longitude}}"> {{item.latitude}}, {{item.longitude}}</td>                            
+                            <td><input type="button" id="destino{{item.id}}" onclick="rodar_direcao()" value="{{item.latitude}}, {{item.longitude}}"></input></td>
                         </tr>
 
                         {% empty %}
@@ -34,7 +34,7 @@
                     </tbody>
                     
                 </table>
-                    {% comment %} tentativa 9 de aplicar o mapa, adicionar +1 a cada tentativa até a conclusão {% endcomment %}
+                    {% comment %} tentativa 16 de aplicar o mapa, deu certo {% endcomment %}
 
                 <div id="rotas">
                          
