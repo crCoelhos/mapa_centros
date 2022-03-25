@@ -25,7 +25,7 @@
                         <tr>
                             <td scope="row">{{ item.nome_centro}}</td>
                             <td>{{item.sigla_centro}}</td>
-                            <td type="button" id="coordenadas" onclick="rodar_direcao()"> {{item.latitude}}, {{item.longitude}}</td>                            
+                            <td type="button" id="destino{{item.id}}" onclick="rodar_direcao()" value="{{item.latitude}}, {{item.longitude}}"> {{item.latitude}}, {{item.longitude}}</td>                            
                         </tr>
 
                         {% empty %}
