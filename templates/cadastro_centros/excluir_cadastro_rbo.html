@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+    {% block titulo %}
+
+    <title>Cadastros</title>
+
+    {% endblock %}
+
+
+        {% load crispy_forms_tags %}
+
+            {% block conteudo %}
+
+            {% if object.pk %}
+
+            <h1 class="h3 mb-4 text-gray-800">Editando Cadastro</h1>
+
+            {% else %}
+
+            <h1 class="h3 mb-4 text-gray-800">Cadastro de Centro Academico do Campus Rio Branco</h1>
+
+            {% endif %}
+                
+                <form method="POST" action="">
+                    
+                    {%csrf_token%}
+
+                    {{form | crispy}}
+
+                    <div class="text-right">
+
+                        {% if object.pk %}
+
+                        <button type="submit" id="" class="save btn btn-warning">Confirmar Edição</button>
+                        
+                        {% else %}
+
+                        <button type="submit" id="" class="save btn btn-success">Salvar</button>
+                        
+                        {% endif %}
+
+                    </div>
+
+                </form>
+                
+                
+            {% endblock %}
+    
+    
+
+    

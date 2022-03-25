@@ -36,8 +36,10 @@ function calcularRota(directionsService, directionsRenderer){
 
 
 //função para jogar as coordenadas geradas no box de input de direção
-const saida_rota = document.getElementById("to"); 
+const saida_rota = document.getElementById("to");
+const refrescar = document.getElementById("a_pe")
 
 function rodar_direcao() {
-    saida_rota.value = document.getElementById("destino{{item.id}}").value; 
+    saida_rota.value = document.getElementById("destino{{item.id}}").value;
+    refrescar.value = document.getElementById("a_pe").value;
 }
