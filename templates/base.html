@@ -77,7 +77,7 @@
                                 <div class="bg-white py-2 collapse-inner rounded">
                                     <h6 class="collapse-header">Campi</h6>
                                     <a class="collapse-item" href="{% url 'listagem'%}">Rio Branco</a>
-                                    <a class="collapse-item" href="{% url 'listagem_fl'%}">Floresta</a>
+                                    {% comment %} <a class="collapse-item" href="{% url 'listagem_fl'%}">Floresta</a> {% endcomment %}
                                     
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Campi</h6>
                         <a class="collapse-item" href="{% url 'cadastro'%}">Rio Branco</a>
-                        <a class="collapse-item" href="{% url 'cadastro_fl'%}">Floresta</a>
+                        {% comment %} <a class="collapse-item" href="{% url 'cadastro_fl'%}">Floresta</a> {% endcomment %}
                     </div>
                 </div>
             </li>

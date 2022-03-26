@@ -22,11 +22,11 @@
                     </thead>
                     <tbody>
                         {% for item in object_list %}
-                        <tr>
+                            <tr>
                             <td scope="row">{{ item.nome_centro}}</td>
                             <td>{{item.sigla_centro}}</td>
-                            <td><input type="button" id="destino{{item.id}}" onclick="rodar_direcao()" value="{{item.latitude}}, {{item.longitude}}"></input></td>
-                        </tr>
+                            <td><input type="button" id="destino{{item.id}}" class="btn btn-info" onclick="rodar_direcao{{item.id}}()" value="{{item.latitude}}, {{item.longitude}}"></input></td>                            
+                            </tr>
 
                         {% empty %}
                             nada foi registrado
@@ -41,13 +41,19 @@
                                            
                         <div>
                             <div>
-                                <input type="text" id="to" placeholder="destino" value="">
+                               
+                                <div class="form-row align-items-center">
+                                    <input type="text" id="to" placeholder="destino" value="" hidden >
+
+                                    <div class="col-auto my-1">
+                                      <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label>
+                                      <select id="mode" class="custom-select mr-sm-2">
+                                        <option selected value="WALKING">Andando</option>
+                                        <option value="TRANSIT">Transporte publico</option>
+                                        <option value="DRIVING">Dirigindo</option>
+                                    </select>
+                                    </div>
                                 
-                                <select id="mode">
-                                    <option value="DRIVING">Dirigindo</option>
-                                    <option value="TRANSIT">Transporte publico</option>
-                                    <option value="WALKING">Andando</option>
-                                </select>
                             </div>
                         </div>
                     
